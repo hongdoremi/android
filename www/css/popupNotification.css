@@ -1,0 +1,81 @@
+
+#pop_notification{
+    width: 63%;
+    height: 0%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#titleText
+{  
+    text-align: center;
+    font-size: 16px;
+    font-family: "PassionOne-Regular";
+    color: white;
+    /* width: 800px; */
+    top: -100%;
+    position: relative;
+    /* left: 110px; */
+}
+#bodyText
+{
+    text-align: center;
+    font-size: 16px;
+    font-family: "PassionOne-Regular";
+    color: white;
+    width: 80%;
+    position: relative;
+    top: -85%;
+    left: 10%;
+}
+#infoIcon
+{
+        width: 6%;
+    padding-left: 0;
+
+}
+#infoText
+{
+        text-align: left;
+    font-size: 18px;
+    font-family: "PassionOne-Regular";
+    color: white;
+    position: relative;
+    left: 9%;
+    top: -127%;
+
+}
+#closeButton{
+    position: absolute;
+    left: 91%;
+    top: 0%;
+    width: 10%;
+}
+#summitButton
+{
+    background: transparent url("../img/popup button/btn_green.png") no-repeat 50% 50%;
+    height: 100%;
+    background-size: contain;
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 38px;
+    font-family: "PassionOne-Regular";
+    color: white;
+}
+#cancelButton
+{
+    background: transparent url("../img/popup button/btn_purple.png") no-repeat 50% 50%;
+    height: 100%;
+    background-size: contain;
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 38px;
+    font-family: "PassionOne-Regular";
+    color: white;
+}

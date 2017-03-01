@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!--<meta name="viewport"-->
+    <!--content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>-->
+    <meta name="viewport" content="user-scalable=no" />
+
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content=" style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <title>PlayPalace</title>
+    <link rel="shortcut icon" data-cfasync="false" href="img/loading screen/icon_57.jpg" />
+    <link data-cfasync="false" rel="stylesheet" type="text/css" href="css/default.css" />
+    <link data-cfasync="false" rel="stylesheet" type="text/css" href="css/html.css" />
+    <link data-cfasync="false" rel="stylesheet" type="text/css" href="css/login.css">
+    <link data-cfasync="false" rel="stylesheet" type="text/css" href="css/main.css" />
+    <link data-cfasync="false" rel="stylesheet" type="text/css" href="css/popupNotification.css" />
+    <link data-cfasync="false" rel="stylesheet" type="text/css" href="css/play_palace_web.css" />
+    <script data-cfasync="false" type="application/javascript" src="js/LoginHtml.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/core/jquery-1.11.3.min.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/lobby-core-js.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/screenfull.min.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/TimeSpan-1.2.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/cookies.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/ipaddr.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/modernizr.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/jquery.transit.min.js"></script>
+
+    <!--phaser lib-->
+    <!--<script data-cfasync="false" type="application/javascript" src="js/core/phaser.min.js"></script>-->
+    <!--<script data-cfasync="false" type="application/javascript" src="js/core/phaser-arcade-physics.min.js"></script>-->
+    <script data-cfasync="false" type="application/javascript" src="js/core/phaser-no-physics.min.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/core/map.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/lodash.core.min.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/deque.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/core/phaser-kinetic-scrolling-plugin.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/pageView.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/core/download.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/constant/ResultCodeConstant.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/constant/LobbyConstant.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/LobbyConfig.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/constant/LobbyLanguageConstant.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/LobbyUserData.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/DynamicProductManager.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/facebook/facebookURLDefaults.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/facebook/facebookController.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/facebook/facebookDialogMethods.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/state/Boot.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/BlankScene.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/helper/Helper4Input.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/Login.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/InitSession.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/Preloader.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/LuckyWheel.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MagicItem.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenuHeader.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenuBody.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenuFooter.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenuPopup.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/Tutorial.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Phuoc.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu-Dac.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu-Dat.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu-Duy.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu-Kiet.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu-Phuoc.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu-Thanh.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu-Toan.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/MainMenu-Ty.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Dac.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Dat.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Duy.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Kiet.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Phuoc.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Thanh.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Toan.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/state/PreloaderResource-Ty.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForAutoGameSlot.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForSound.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForEvent.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForPurchase.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForAdvertise.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForDebug.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForHtmlPopup.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForImage.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForTransfer.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForScale.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForPopUp.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ManagerForOrientation.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/LobbyLanguage.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/LobbyBlackListIpAddress.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/constant/ConstantFontName.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/manager/Manager4MyUserInfo.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/Manager4Spin.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/LobbyRequest.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/helper/Helper.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ScheduleManager.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/MusicManager.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/ResourceLoader.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/Manager4Product.js"></script>
+    <!--<script data-cfasync="false" type="application/javascript" src="js/manager/Manager4MouseWheelCallback.js"></script>-->
+    <script data-cfasync="false" type="application/javascript" src="js/manager/appPurchasePCControllerController.js"></script>
+
+
+    <script data-cfasync="false" type="application/javascript" src="js/manager/Manager4ExportExcel.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/manager/Manager4DebugTestAlgorithm.js"></script>
+
+
+    <script data-cfasync="false" type="application/javascript" src="js/state/bodyAnimations/UIBodyAnimation.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/constant/ConstantFontName.js"></script>
+
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/GameSlot.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/CTweenController.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/CFooter.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/CLoaderUI.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/UI/SpriteAnimation.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/UI/AtlasAnimation.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/network/Manager4Network.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/manager/Manager4State.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/GameConstant.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/CInterfaceBase.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/CReelColumnBase.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/base/CLineBase.js"></script>
+
+    <!--DEEP BLUE-->
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/game/CMainDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/game/CGameDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/game/CDoubleUpDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/game/CBonusFreeSpinDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/interfaceUI/CInterfaceDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/interfaceUI/CSmallFishAnimation.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/interfaceUI/CWinAnimDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/interfaceUI/CReelColumnDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/interfaceUI/CWinPanelDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/interfaceUI/CFreespinIndicatorDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/settings/settingsDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/settings/CSlotSettingsDB.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/deepblue/manager/Manager4SoundDB.js"></script>
+    <!--END DEEP BLUE-->
+
+    <!--GOLDEN EGGS-->
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/game/CMainGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/game/CGameGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/game/CDoubleUpGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/game/CBonusFreeSpinGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/interfaceUI/CInterfaceGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/interfaceUI/CWinAnimGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/interfaceUI/CReelColumnGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/interfaceUI/CWinPanelGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/interfaceUI/CFreespinIndicatorGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/settings/settingsGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/settings/CSlotSettingsGE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/goldenegg/manager/Manager4SoundGE.js"></script>
+    <!--END GOLDEN EGGS-->
+
+    <!--NEZHA-->
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/game/CMainLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/game/CGameLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/game/CBonusPalaceLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/game/CBonusBattleLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/interfaceUI/CInterfaceLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/interfaceUI/CAvatarNezha.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/interfaceUI/CWinAnimLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/interfaceUI/CReelColumnLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/interfaceUI/CWinPanelLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/interfaceUI/CFreespinIndicatorLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/settings/settingsLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/settings/CSlotSettingsLN.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/legendofnezha/manager/Manager4SoundLN.js"></script>
+    <!--END NEZHA-->
+
+    <!--PHARAOH-->
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/game/CMainPO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/game/CGamePO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/game/CBonusStage1.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/game/CBonusStage2.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/interfaceUI/CInterfacePO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/interfaceUI/CEagleFreeSpin.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/interfaceUI/CWinAnimPO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/interfaceUI/CReelColumnPO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/interfaceUI/CWinPanelPO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/interfaceUI/CFreespinIndicatorPO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/settings/settingsPO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/settings/CSlotSettingsPO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/pharaoh/manager/Manager4SoundPO.js"></script>
+    <!--END PHARAOH-->
+
+    <!--BOXING-->
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/game/CMainBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/game/CGameBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/game/CDoubleUpBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/interfaceUI/CInterfaceBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/interfaceUI/CWinAnimBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/interfaceUI/CReelColumnBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/interfaceUI/CWinPanelBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/interfaceUI/CFreespinIndicatorBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/settings/settingsBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/settings/CSlotSettingsBO.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/boxing/manager/Manager4SoundBO.js"></script>
+    <!--END BOXING-->
+
+    <!--BOXING-->
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/game/CMainRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/game/CGameRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/game/CBonusFreeSpinRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/game/CDoubleUpRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/interfaceUI/CInterfaceRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/interfaceUI/CWinAnimRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/interfaceUI/CReelColumnRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/interfaceUI/CWinPanelRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/interfaceUI/CFreespinIndicatorRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/settings/settingsRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/settings/CSlotSettingsRE.js"></script>
+    <script data-cfasync="false" type="application/javascript" src="js/slotgamedata/romanempire/manager/Manager4SoundRE.js"></script>
+    <!--END BOXING-->
+
+    <!--Web Test-->
+    <script data-cfasync="false" type="application/javascript" src="js/facebook/facebookConnectPlugin.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+        // Wait for device API libraries to load
+
+
+        //use for info.plist ios
+//        <key>NSPhotoLibraryUsageDescription</key>
+//        <string>We need to access photo library to get image for avatar of user</string>
+//        <key>NSCalendarsUsageDescription</key>
+//        <string>User for set info when unzip file *.zip</string>
+
+        $(document).ready(function() {
+            /**
+             * when all javascript file was load
+             */
+            function onLoad() {
+                if (Lobby.Utils.isWeb()) ondeviceReady();
+                else document.addEventListener("deviceready", ondeviceReady, false);
+
+                loadGame();
+            }
+
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }
+            onLoad();
+            /**
+             * load phaser game
+             */
+            function loadGame() {
+                //                var iframeGame = $('#iframe-game');
+                //              iframeGame.css("z-index", "100");
+                //              iframeGame.css("display", "block");
+                //                document.getElementById('iframe-game').src = "http://gn.rikvip.com/";
+                //              return;
+                if (!String.prototype.startsWith) {
+                    String.prototype.startsWith = function(searchString, position) {
+                        position = position || 0;
+                        return this.indexOf(searchString, position) === position;
+                    };
+                }
+
+                gotoGame();
+            }
+        });
+
+        /**
+         * when all plugin cordova is ready
+         */
+        function ondeviceReady() {
+            if(!Lobby.Utils.isWeb() && !Lobby.Utils.isIOS() && screen.lockOrientation) screen.lockOrientation('landscape');
+            if (LobbyConfig.enableLoginHtml && !LobbyConfig.debugHtml) {
+                LobbyC.Login.LoginHtml = new LoginHtml();
+                LobbyC.Login.LoginHtml.setActiveHtmlHolder(true);
+
+                var isFromMemoryError = LobbyRequest.Utils.getUrlParameterExt(LobbyConstant.memoryError);
+                if(isFromMemoryError) {
+                    LobbyC.Login.LoginHtml.showLoginNotification("Error", "The application has stopped unexpectedly.",null,function(){
+                        Lobby.Utils.reloadGame();        }
+                );
+                }
+            }
+            if(LobbyConfig.debugHtml){
+                LobbyC.MainMenu.popupHtml = new ManagerForHtmlPopup(LobbyC.MainMenu);
+            }
+            try {
+                if (!(typeof cordova == "undefined")) {
+                    window.open = cordova.InAppBrowser.open;
+                    if (Lobby.Utils.objectNotNull(AndroidFullScreen)) AndroidFullScreen.immersiveMode();
+
+
+                    if (!Lobby.Utils.isIOS()) {
+                        var autoHideNavigationBar = false;
+                        window.navigationbar.setUp(autoHideNavigationBar);
+                        window.navigationbar.hideNavigationBar();
+                    }
+                }
+            } catch (ex) {}
+            if (!Lobby.Utils.isWeb()) {
+                window.plugins.insomnia.keepAwake();
+                StatusBar.hide();
+                navigator.splashscreen.hide();
+            }
+
+            function hasClass(element, cls) {
+                return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+            }
+            try {
+                $(document).on("keydown", function(e) {
+                    if (e.which === 8 && !$(e.target).is("input, textarea") && hasClass(e.target, "no-click")) {
+                        //                        e.preventDefault();
+                    }
+                });
+            } catch (err) {
+                alert("Your browser is too old to handle this web application, or may not display it correctly.");
+            }
+
+//            LobbyC.Login.LoginHtml.autoLoginGuestAccount();
+            if(LobbyConfig.isTestAlgorithmMode){
+
+
+                var isAutoExportBK = Lobby.Utils.getParameterFromCurrentURL("isAutoExportBK");
+                if(isAutoExportBK === 'true'){
+                    setInterval(function(){
+
+                        Manager4ExportExcel.exportTable(LobbyConfig.testData4ExportExcel, null, false,null,null,true);
+                        Manager4DebugTestAlgorithm.export2LogFile(null,true);
+                    },10*60*1000); //10 minute
+                }
+
+                var gameTest = Lobby.Utils.getParameterFromCurrentURL("testGame");
+                if(
+                        gameTest === "nezha" ||
+                        gameTest === "deepblue" ||
+                        gameTest === "goldenegg" ||
+                        gameTest === "pharaoh" ||
+                        gameTest === "romanempire" ||
+                        gameTest === "boxing"
+                ){
+                    LobbyConfig.testGame = gameTest;
+                }
+
+                var simulateType = Lobby.Utils.getParameterFromCurrentURL("simulateType");
+                LobbyConfig.browserID = "";
+                if(
+                        Lobby.Utils.objectNotNull(simulateType) &&
+                        simulateType !== "false" &&
+                        Lobby.Utils.isNumber(simulateType)){
+
+
+
+                    var browserID = Lobby.Utils.getParameterFromCurrentURL("browserID");
+                    if(Lobby.Utils.objectIsNull(browserID)){
+                        LobbyConfig.browserID = Lobby.Utils.getRandomInRange(0,10000) +  "_";
+                    }else{
+                        LobbyConfig.browserID = browserID;
+                    }
+
+                    simulateType = parseInt(simulateType);
+                    LobbyConfig.isAutoChangeAccountWhenReachLevel30 = true;
+                    LobbyConfig.isNoStopBaseOnUICoinAndTotalBet = false;
+                    LobbyConfig.isAutoTest = true;
+                    LobbyConfig.simulateType = simulateType;
+                    LobbyConfig.setSimulateAccountType(simulateType,LobbyConfig.testGame);
+
+                    var isFixedSimulateType = Lobby.Utils.getParameterFromCurrentURL("isFixedSimulateType");
+                    if (isFixedSimulateType === 'true') {
+                        LobbyConfig.isFixedSimulateType = true;
+                    } else {
+                        LobbyConfig.isFixedSimulateType = false;
+                    }
+                    var isAutoLogin = Lobby.Utils.getParameterFromCurrentURL("isAutoLogin");
+                    if (isAutoLogin === 'true') {
+                        LobbyConfig.isAutoLogin = true;
+
+                        var autoLoginAccountType = Lobby.Utils.getParameterFromCurrentURL("autoLoginAccountType");
+
+//                        window.setTimeout(function(){
+                        if(autoLoginAccountType === '1'){
+                            LobbyC.Login.LoginHtml.autoLoginPPAccount();
+                        }else {
+                            LobbyC.Login.LoginHtml.autoLoginGuestAccount();
+                        }
+//                        },5000);
+
+                        LobbyConfig.isEnterGame = false;
+                        window.setTimeout(function(){
+                            if(!LobbyConfig.isEnterGame){
+                                //reload game if graphic when wrong
+                                Lobby.Utils.reloadGame();
+                            }
+                        },5*60*1000);//5 phut
+//                    alert(LobbyConfig.isMaxBet);
+                    }
+
+                }else {
+
+                    var isMaxBet = Lobby.Utils.getParameterFromCurrentURL("isMaxBet");
+                    if (isMaxBet === 'true') {
+                        LobbyConfig.isMaxBet = true;
+//                    alert(LobbyConfig.isMaxBet);
+                    }
+
+                    var isMediumBet = Lobby.Utils.getParameterFromCurrentURL("isMediumBet");
+                    if (isMediumBet === 'true') {
+                        LobbyConfig.isMediumBet = true;
+//                    alert(LobbyConfig.isMediumBet);
+                    }
+                    var isFixedBet = Lobby.Utils.getParameterFromCurrentURL("isFixedBet");
+                    if (isFixedBet === 'true') {
+                        LobbyConfig.isFixedBet = true;
+                    } else {
+                        LobbyConfig.isFixedBet = false;
+                    }
+                    var expectedBet = Lobby.Utils.getParameterFromCurrentURL("expectedBet");
+                    if (Lobby.Utils.objectNotNull(expectedBet) && expectedBet !== "" && Lobby.Utils.isNumber(expectedBet)) {
+                        LobbyConfig.expectedBet = parseInt(expectedBet);
+                    }
+
+                    var isAutoTest = Lobby.Utils.getParameterFromCurrentURL("isAutoTest");
+                    if (isAutoTest === 'true') {
+                        LobbyConfig.isAutoTest = true;
+                    }
+
+                    var isNoStopBaseOnUICoinAndTotalBet = Lobby.Utils.getParameterFromCurrentURL("isNoStopBaseOnUICoinAndTotalBet");
+                    if (isNoStopBaseOnUICoinAndTotalBet === 'true') {
+                        LobbyConfig.isNoStopBaseOnUICoinAndTotalBet = true;
+                    } else {
+                        LobbyConfig.isNoStopBaseOnUICoinAndTotalBet = false;
+                    }
+
+                    var testAccountType = Lobby.Utils.getParameterFromCurrentURL("testAccountType");
+                    if (Lobby.Utils.objectNotNull(testAccountType) && testAccountType !== "" && Lobby.Utils.isNumber(testAccountType)) {
+                        LobbyConfig.testAccountType = parseInt(testAccountType);
+                    }
+                }
+            }
+
+
+        }
+
+        /**
+         * start phaser game
+         */
+        function gotoGame() {
+
+            document.getElementById("lobbygame").style.display = "block";
+            //            document.getElementById("dragSurface").style.display = "block";
+            //            document.getElementById("dragSurface2").style.display = "block";
+            document.getElementById("bodyTag").style.background = "";
+            document.getElementById("container").style.display = "none";
+            //            document.getElementById("footer").style.display = "none";
+
+            var game = null;
+
+            var width = screen.height;
+            var height = screen.width;
+            var screenRatio;
+            var realWidth;
+            var realHeight;
+            if (width > height) {
+                realWidth = width;
+                realHeight = height;
+                screenRatio = (height / width);
+            } else {
+                realWidth = height;
+                realHeight = width;
+                screenRatio = (width / height);
+            }
+            if (isNaN(screenRatio)) {
+                if (window.innerHeight > window.innerWidth) {
+                    realWidth = window.innerHeight;
+                    realHeight = window.innerWidth;
+                    screenRatio = (window.innerWidth / window.innerHeight);
+                } else {
+                    realWidth = window.innerWidth;
+                    realHeight = window.innerHeight;
+                    screenRatio = (window.innerHeight / window.innerWidth);
+                }
+            }
+
+
+            var extraWidth = 0,
+                extraHeight = 0;
+            var SAFE_ZONE_WIDTH = LobbyConfig.realWidth;
+            var SAFE_ZONE_HEIGHT = LobbyConfig.realHeight;
+            var w = realWidth; //* pixelRatio,
+            var h = realHeight; //* pixelRatio;
+            var lw, lh; //landscape width/height in pixels
+            if (h > w) {
+                lw = h;
+                lh = w;
+            } else {
+                lw = w;
+                lh = h;
+            }
+            LobbyConfig.deviceWidth = realWidth;
+            LobbyConfig.deviceHeight = realHeight;
+            LobbyConfig.fixRatioBetweenHeightAndWidthDevice = lh / lw;
+
+            if (Lobby.Utils.is3x4Device()) {
+                // START SCALE ON IPAD
+
+                var aspectRatioDevice = lw / lh;
+
+                var aspectRatioSafeZone = SAFE_ZONE_WIDTH / SAFE_ZONE_HEIGHT;
+                if (aspectRatioSafeZone < aspectRatioDevice) {
+                    // have to add game pixels horizontally in order to fill the device screen
+                    extraWidth = aspectRatioDevice * SAFE_ZONE_HEIGHT - SAFE_ZONE_WIDTH;
+                } else {
+                    // have to add game pixels vertically
+                    extraHeight = SAFE_ZONE_WIDTH / aspectRatioDevice - SAFE_ZONE_HEIGHT;
+                }
+                LobbyConfig.realExtraWidth = LobbyConfig.realWidth + extraWidth;
+                LobbyConfig.realExtraHeight = LobbyConfig.realHeight + extraHeight;
+                ManagerForScale.init(extraWidth, extraHeight, LobbyConfig.realWidth + extraWidth, LobbyConfig.realHeight + extraHeight);
+                // FINISH SCALE ON IPAD
+            }
+
+
+
+            var UIMode = Phaser.CANVAS; // han che dung WEBGL do loi qua nhieu
+            if (!Lobby.Utils.isIOSCheckWithoutPlugin() &&
+                Lobby.Utils.checkWebGLSupported()) {
+                UIMode = Phaser.AUTO;
+            }
+
+            if(LobbyConfig.isTestAlgorithmMode){
+                UIMode = Phaser.CANVAS;
+            }
+
+            //            var config =
+            //            {  forceSetTimeOut: false,
+            //                renderer: UIMode,
+            //                width: LobbyConfig.realWidth + extraWidth,
+            //                height: LobbyConfig.realHeight + extraHeight,
+            //                parent:'lobbygame',
+            //                transparent:true
+            //            };
+            //            game = new Phaser.Game(config);
+            game = new Phaser.Game(
+                LobbyConfig.realWidth + extraWidth,
+                LobbyConfig.realHeight + extraHeight,
+                UIMode,
+                'lobbygame',
+                null,
+                true //transparent
+            );
+
+            game.state.add(LobbyConstant.stateName.Boot, LobbyC.Boot);
+            game.state.add(LobbyConstant.stateName.Login, LobbyC.Login);
+            game.state.add(LobbyConstant.stateName.InitSession, LobbyC.InitSession);
+            game.state.add(LobbyConstant.stateName.Preloader, LobbyC.Preloader);
+            game.state.add(LobbyConstant.stateName.MainMenu, LobbyC.MainMenu);
+            game.state.add(LobbyConstant.stateName.GameSlot, LobbyC.GameSlot);
+            game.state.add(LobbyConstant.stateName.LuckyWheel, LobbyC.LuckyWheel);
+            game.state.add(LobbyConstant.stateName.BlankScene, LobbyC.BlankScene);
+
+            game.state.start(
+                "Boot",
+                true, // clearWorld
+                false // clearCache
+            );
+
+
+            //          window.showGameSlots = function(){
+            //            LobbyConfig.isOnly= true;
+            //            var game2 = new Phaser.Game(
+            //              LobbyConfig.width,// + extraWidth,
+            //              LobbyConfig.height,// + extraHeight,
+            //              Phaser.CANVAS,
+            //              'lobbygame2',
+            //              null,
+            //              true
+            //            );
+            //            game2.state.add('Boot', LobbyC.Boot);
+            //            game2.state.add('GameSlot',LobbyC.GameSlot);
+            //            game2.state.start('Boot');
+            //            //
+            //            var lobbygame = $("#lobbygame");
+            //            lobbygame.css("pointer-events", "none");
+            //            lobbygame.css("z-index", "90");
+            //            lobbygame.css("display", "none");//
+            //            var lobbygame2 = $("#lobbygame2");
+            //            lobbygame2.css("pointer-events", "all");
+            //            lobbygame2.css("z-index", "100");
+            //            lobbygame2.css("display", "block");
+            //
+            //
+            //          };
+
+        }
+
+        /**
+         * handle all error exception and print log to console
+         * @param errorMsg
+         * @param url
+         * @param lineNumber
+         * @returns {null}
+         */
+        window.onerror = function(errorMsg, url, lineNumber) {
+            console.log("window.onerror. errorMsg: ", errorMsg);
+            console.log("window.onerror. url: ", url);
+            console.log("window.onerror. lineNumber: ", lineNumber);
+            console.log("window.onerror. all arguments: ", arguments);
+            if(LobbyConfig.isTestAlgorithmMode){
+                if(LobbyConfig.isAutoLogin == true){
+                    Lobby.Utils.reloadGame();
+                    return;
+                }
+                Manager4ExportExcel.exportTable(LobbyConfig.testData4ExportExcel, null, false,null,null,false);
+                Manager4DebugTestAlgorithm.export2LogFile(null,false);
+            }
+            return null;
+        };
+    </script>
+    <script>
+        function onMemoryError() {
+            ManagerForEvent.onMemoryError();
+        }
+    </script>
+
+</head>
+
+<body bgcolor="#333333" id="bodyTag" ontouchstart="">
+    <!--<body bgcolor="#333333" style="margin:0px;">-->
+    <input type="hidden" id="link_loading_background" value="" />
+    <input type="hidden" id="login_in_browser" value="" />
+
+    <div id="game">
+        <div id="fb-root"></div>
+    </div>
+    <iframe id="iframe-game" src="" width="100%" height="100%" frameborder="0">
+</iframe>
+    <!--<div class="dragSurface" id="dragSurface">-->
+    <!--</div>-->
+    <!--<div class="darkLayerInGameSlot" id="darkLayerInGameSlot">-->
+    <!--</div>-->
+    <!--<div class="darkLayerInGameSlot" id="darkLayerInGameSlotLoading">-->
+    <!--</div>-->
+    <div id="game-popup"></div>
+    <input id="search-my-friend" class="no-click" style="font-family:Helvetica-Bold" type="text" />
+    <input id="input-field" class="no-click" style="font-family:Helvetica-Bold" maxlength="254" type="password" />
+    <input id="change-name" class="no-click" style="font-family:'Passion One'" maxlength="254" type="text" />
+    <input class="loading-font no-click" id="sc-title" style="font-family:Helvetica-Light" type="text" />
+    <input id="sc-money" class="no-click" style="font-family:Helvetica-Medium" type="text" maxlength="8" />
+    <input class="loading-font no-click" id="fontPSBOLD" style="font-family:PassionOne-Bold" type="text" />
+    <input class="loading-font no-click" id="fontPSR" style="font-family:PassionOne-Regular" type="text" />
+    <input class="loading-font no-click" id="fontPSB" style="font-family:PassionOne-Black" type="text" />
+    <input class="loading-font no-click" id="fontHT" style="font-family:HelveticaNeue-Thin" type="text" />
+    <textarea class="no-click" id="sc-msg"></textarea>
+
+    <!--<div id="lobbygame" ></div>-->
+    <!--<div id="lobbygame" style="visibility: hidden"></div>-->
+    <!--<div class="darkLayerNew">-->
+    <!--</div>-->
+    <!--<div id="pop_notification">-->
+    <!--<img src="img/popup/notification/congrat_bg_small.png" width="100%" height="100%">-->
+    <!--<input type="image" src="img/popup button/btn_close.png"  id="closeButton">-->
+    <!--<p id="titleText">sdasdsdsadasd </p>-->
+    <!--<p id="bodyText">sdasdasdasdasdasdasdasdsdsadasd </p>-->
+    <!--<div id="successButtonDiv" style="-->
+    <!--position: absolute;-->
+    <!--width: 36%;-->
+    <!--height: 20%;-->
+    <!--margin-right: 0px;-->
+    <!--top: 59%;-->
+    <!--left: 30%;-->
+    <!--">-->
+    <!--<button type="submit" id="summitButton">OK</button>-->
+    <!--</div>-->
+
+    <!--<div id="cancelButtonDiv" style="-->
+    <!--position: absolute;-->
+    <!--width: 36%;-->
+    <!--height: 20%;-->
+    <!--margin-right: 0px;-->
+    <!--top: 59%;-->
+    <!--left: 30%;-->
+    <!--">-->
+
+    <!--<button type="submit" id="cancelButton">CANCEL</button>-->
+    <!--</div>-->
+    <!--<div style="height: 10%;width: 100%;top: -65%;position: relative;left: 5%;">-->
+    <!--<input type="image" src="img/popup/info_icon.png" id="infoIcon">-->
+    <!--<p id="infoText">OK</p>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div id="lobbygame" style="visibility: visible"></div>
+
+    <div id="tableTestAlgorithm" style="visibility: visible"></div>
+    <iframe id="txtArea1" style="display:none"></iframe>
+    <!--<div id="lobbygame2"></div>-->
+    <!--<a id="youtube" href="#"></a>-->
+
+    <!--<div class="header"></div>-->
+    <div class="container" id="container">
+    </div>
+    <div id="in-game-html-holder" style="display:block;">
+        <div class="pp-scene">
+            <div class="main">
+                <div class="wrapper">
+                    <div class="darkLayerNew" id="darkLayer"></div>
+                    <div id="popup-holder" class="pp-center-in-game">
+                        <div id="popup-center">
+                            
+                        <div id="popup-change-name" class="fade-in">
+                            <button class="close-popup-btn" id="close-popup-change-name">
+                        </button>
+                            <div class="popup-text pp-blank-input-field" id="popup-change-name-title">Change name</div>
+                            <div class="popup-text" id="popup-change-name-user-name">
+                                Anonymous
+                            </div>
+                            <input type="text" maxlength="40" class="popup-text pp-blank-button" id="popup-change-name-new-name" placeholder="..."/>
+                            <button class="purple-button scale-button" id="popup-change-name-cancel-btn">
+                                <div class="popup-btn-text" id="popup-change-name-cancel-btn-text">Cancel</div>
+                            </button>
+                            <button class="green-button scale-button" id="popup-change-name-ok-btn">
+                                <div class="popup-btn-text" id="popup-change-name-ok-btn-text">OK</div>
+                            </button>
+                        </div>
+                        <div id="popup-setting-css">
+
+                            <button class="close-popup-btn" id="close-popup-setting" style="margin-left: 94%; margin-top: -5px">
+                            </button>
+                            <div class="popup-text" id="popup-setting-log-text" style="color: #EACAF2;font-size: 26px;margin-top: -25px;
+                            margin-left: 40px; position: absolute;
+                            ">Logged in via: Facebook</div>
+                                <div class="popup-text" id="popup-setting-username-text" style="color: #FFFFFF;font-size: 21px;
+                            margin-top: 15px;margin-left: 40px;position: absolute;">Duy Lê</div>
+
+                                <div class="popup-text" id="popup-setting-acc-text" style="color: #FFFFFF;font-size: 21px;
+                             margin-top: 17px;margin-left: 205px;position: absolute;">Account UID: </div>
+                                <div class="popup-text" id="popup-setting-uid-text" style="color: #E673DF;font-size: 21px;
+                             margin-top: 17px;margin-left: 310px;position: absolute;">12345678901234567</div>
+                                <div class="popup-text" id="popup-setting-option-text" style="color: #EB76E4;font-size: 20px;
+                             margin-top: 8.8%;margin-left: 50px;position: absolute;">Game Options</div>
+                                <div class="popup-text" id="popup-setting-push-text" style="color: #EB76E4;font-size: 20px;
+                             margin-top: 31.2%;margin-left: 50px;position: absolute;">Push Notification</div>
+                                <div class="popup-text" id="popup-setting-music-text" style="color: #EACAF2;font-size: 23px;
+                             margin-top: 109px;margin-left: 50px;position: absolute;">Background Music</div>
+                                <div class="popup-text" id="popup-setting-sound-text" style="color: #EACAF2;font-size: 23px;
+                            margin-top: 148px;margin-left: 50px;position: absolute;">Sound Effects</div>
+                                <div class="popup-text" id="popup-setting-language-text" style="color: #EACAF2;font-size: 23px;
+                             margin-top: 188px;margin-left: 50px;position: absolute;">Language</div>
+                                <div class="popup-text" id="popup-setting-friend-text" style="color: #EACAF2;font-size: 23px;
+                             margin-top: 275px;margin-left: 50px;position: absolute;">Friend Request</div>
+
+                            <label class="switch">
+                                <input type="checkbox" id="popup-setting-music-switch">
+                                <div class="toggle"style="margin-left: 513px; margin-top: 108px"></div>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox" id="popup-setting-sound-switch">
+                                <div class="toggle" style="margin-left: 513px; margin-top: 149px"></div>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox" id="popup-setting-friend-switch">
+                                <div class="toggle" style="margin-left: 513px; margin-top: 277px"></div>
+                            </label>
+
+                            <button class="blue-square-button" id="popup-setting-logout-btn" style="margin-top: -5px;margin-left: 520px;
+                            height: 50px;width: 160px;">
+                                <div class="popup-btn-text"id="text-loggout"style="font-size: 25px">Logout</div>
+                            </button>
+                            <button class="blue-square-button" id="popup-setting-privacy-btn" style="margin-top: 330px;margin-left: 260px;
+                            height: 45px;">
+                                <div class="popup-btn-text"id="text-privacy"style="font-size: 22px">Privacy Policy</div>
+                            </button>
+                            <button class="green-square-button" id="popup-setting-term-btn" style="margin-top: 330px;margin-left: 50px;
+                            height: 45px">
+                                <div class="popup-btn-text"id="text-term"style="font-size: 22px">Terms of Service</div>
+                            </button>
+                            <button id="btn-language" style="margin-top: 188px;margin-left: 505px;width: 112px;display: block;position: absolute;height: 32px;border: none;background: none;">
+                                <div class="popup-btn-text" id="text-btn-language" style="font-size: 19px;color: #471F54">Language</div>
+                            </button>
+                            <button id="btn-test" style="margin-top: 350px;margin-left: 550px;width: 200px;display: block;position: absolute;height: 32px;border: none;background: none;">
+                                <div class="popup-btn-text" id="text-version-test" style="font-size: 21px;color: #EB76E4">version 0.1</div>
+                            </button>
+                            <div id="groupLanguge" style="margin-left: 512px;margin-top: 222px;position: absolute;display: none;">
+                                <button class="popup-setting-language-btn" id="english-btn" style="margin-top: 0px;margin-left: 0px;">
+                                    <div class="popup-btn-text" id="text-english-btn" style="font-size: 20px;">English</div>
+                                </button>
+                                <button class="popup-setting-language-btn" id="vietnamese-btn" style="margin-top: 32px;margin-left: 0px;">
+                                    <div class="popup-btn-text" id="text-vietnamese-btn" style="font-size: 20px;">Tiếng Việt</div>
+                                </button>
+                                <button class="popup-setting-language-btn" id="chinese-btn" style="margin-top: 64px;margin-left: 0px;">
+                                    <div class="popup-btn-text" id="text-chinese-btn" style="font-size: 20px;">简体</div>
+                                </button>
+                                <button class="popup-setting-language-btn" id="taiwan-btn" style="margin-top: 96px;margin-left: 0px;">
+                                    <div class="popup-btn-text" id="text-taiwan-btn" style="font-size: 20px;">繁體</div>
+                                </button>
+                                <button class="popup-setting-language-btn" id="malay-btn" style="margin-top: 128px;margin-left: 0px;">
+                                    <div class="popup-btn-text" id="text-malay-btn" style="font-size: 20px;">B-Malay</div>
+                                </button>
+                                <button class="popup-setting-language-btn" id="indo-btn" style="margin-top: 160px;margin-left: 0px;">
+                                    <div class="popup-btn-text" id="text-indo-btn" style="font-size: 20px;">B-Indonesia</div>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="popup-notification-container-css" style="display: none" >
+                            <div class="darkLayerNew" id="darkLayerNoti" style="z-index: -1; display: block"></div>
+                            <div id="popup-notification-css" >
+                                <button class="close-popup-btn" id="close-popup-notification">
+                                </button>
+
+                                <div class="popup-text" id="popup-notification-title">New content coming soon</div>
+
+
+                                <div id="popup-notification-body-div">
+                                <span class="popup-text" id="popup-notification-body-span">We are working hard to bring you new content We are working hard to bring you new content We are working hard to bring you new content We are working hard to bring you new content </span>
+                                </div>
+                                <div id="popup-notification-button-row">
+                                    <button class="green-button" id="popup-notification-ok-btn">
+                                        <div class="popup-btn-text"id="text-ok-popup-notification">OK</div>
+                                    </button>
+                                    <button class="purple-button" id="popup-notification-cancel-btn">
+                                        <div class="popup-btn-text" id="text-cancel-popup-notification">CANCEL </div>
+                                    </button>
+                                </div>
+                                <div id="popup-notification-info">
+                                    <div id="popup-notification-info-icon"></div>
+                                    <div class="popup-btn-text"id="popup-notification-info-text">Remove a game anytime by pressing and holding it down</div>
+                                </div>
+                            </div>
+                    </div>
+
+                        <div id="popup-buyspins-css" >
+                            <button class="close-popup-btn" id="close-popup-buyspins">
+                            </button>
+
+                            <div class="popup-text" id="popup-buyspins-title" style="font-size: 50px">GET MORE SPINS</div>
+
+                            <div id="popup-buyspins-button-row" style="padding-top: 50px">
+                                <button class="green-button" id="popup-buyspins-10-btn">
+                                    <div class="popup-btn-text"id="text-10-popup-buyspins">10 Spins</div>
+                                </button>
+                                <button class="green-button" id="popup-buyspins-20-btn">
+                                    <div class="popup-btn-text"id="text-20-popup-buyspins">20 Spins</div>
+                                </button>
+                                <button class="green-button" id="popup-buyspins-30-btn">
+                                    <div class="popup-btn-text"id="text-30-popup-buyspins">30 Spins</div>
+                                </button>
+                            </div>
+
+                            <div class="popup-text" id="popup-buyspins-text-info" style="padding-top: 40px;font-size: 30px;">SPIN TO GET COOL STUFF</div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="html-holder" class="pp-gradient-background" style="display:none;">
+        <div id="pp-scene-holder">
+            <div class="pp-scene">
+                <div class="main">
+                    <div class="wrapper">
+                        <button class="pp-blank-button" id="pp-login-back-btn"></button>
+                        <div class="pp-center">
+                            <div id="pp-popup-notification-login-scene">
+                                <hr style="border-top: 1px solid #443c3c;padding: 0;margin-top: 14%;width: 80%;">
+                                <p id="titlePopupLoginScene" style="position: relative;top: -27%;text-align: center;font-family: Helvetica-Light;font-size: 20px;">PlayPalace Login</p>
+
+                                <p id="bodyTextPopupLoginScene" style="position: relative; top: -27%; text-align: center; font-family: Helvetica-Light; font-size: 20px;height: 52px;justify-content: center;margin: 0;align-items: center;display: flex; margin-left: 5px;margin-right: 5px;">Please enter your password</p>
+                                <div style="position:absolute;bottom: 6px;left: 0;right: 0;">
+                                    <button class="pp-button pp-font-custom-helvetica-light" id="summitButtonPopupNotificationLoginScene">OK</button>
+                                    <button class="pp-button pp-font-custom-helvetica-light" id="cancelButtonPopupNotificationLoginScene">CANCEL</button>
+                                </div>
+                            </div>
+                            <div id="darkLayerLoginNew"></div>
+                            <div class="content">
+                                <div class="noselect pp-logo">
+                                    <img id="pp-logo" src="img/login/logo.png">
+                                </div>
+                                <div id="pp-login-state">
+                                    <div class="pp-scene-header noselect pp-font-custom-helvetica-light" id="pp-scene-header-login">
+                                        LOGIN
+                                    </div>
+                                    <div class="pp-form-area" id="pp-login-form">
+                                        <div class="pp-input-area">
+                                            <div class="pp-input-lable noselect pp-font-custom-helvetica-light">
+                                                Email
+                                            </div>
+                                            <input type="text" maxlength="40" class="pp-blank-button pp-input-field" id="pp-login-username" />
+                                            <hr class="pp-line-space" />
+                                            <div class="pp-input-lable noselect pp-font-custom-helvetica-light">
+                                                Password
+                                            </div>
+                                            <input type="password" maxlength="40" class="pp-blank-button pp-input-field" id="pp-login-password" />
+                                            <hr class="pp-line-space" />
+                                            <button class="pp-button noselect pp-font-custom-helvetica-light" id="pp-login-btn">
+                                                Login
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <button class="pp-blank-button noselect pp-scene-text-button pp-font-custom-helvetica-light" id="pp-new-account-btn">
+                                    Create new account
+                                </button>
+                                    <br/>
+                                    <button class="pp-blank-button noselect pp-scene-text-button pp-font-custom-helvetica-light" id="pp-forgot-pwd-btn">
+                                    Forgot your password?
+                                </button>
+                                </div>
+                                <div id="pp-main-login">
+                                    <div class="pp-logo">
+                                        <button class="pp-blank-button" id="facebook-logo"></button>
+                                    </div>
+                                    <br/>
+                                    <div class="pp-logo">
+                                        <img id="pp-or-img" src="img/login/or.png">
+                                    </div>
+                                    <br/>
+                                    <div id="pp-login-button-row">
+                                        <span>
+                             <button class="pp-blank-button" id="pp-login-as-guest-btn">
+                             </button></span>
+                                        <span>
+                                <button class="pp-blank-button noselect pp-btn-text pp-font-custom-helvetica-light">
+                                    Play as guest
+                                </button>
+                            </span>
+                                        <span>
+                             <button class="pp-blank-button" id="pp-login-with-acc-btn">
+                             </button></span>
+                                        <span>
+                                <button class="pp-blank-button noselect pp-btn-text pp-font-custom-helvetica-light">
+                                    Login with<br/>PlayPalace
+                                </button>
+                            </span></div>
+                                    <br/>
+                                    <div class="pp-font-custom-helvetica-light noselect" id="pp-version">Test version:
+                                        <div id="pp-version-text"></div>
+                                    </div>
+                                    <div id="pp-main-scene-footer">
+                                        <div class="noselect pp-font-custom-helvetica-medium" id="pp-permision-footer-text">
+                                            We will never post without your permission.
+                                        </div>
+                                        <div id="pp-copyright-footer-text" class="noselect pp-font-custom-helvetica-light">
+                                            © Copyright PlayPalace. All right reserved.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="pp-new-sign-up">
+                                    <div class="pp-scene-header noselect pp-font-custom-helvetica-light noselect" id="pp-scene-header-sign-up">
+                                        SIGN UP
+                                    </div>
+                                    <div class="pp-form-area" id="pp-sign-up-form">
+                                        <div class="pp-input-area">
+                                            <div class="pp-input-lable noselect pp-font-custom-helvetica-light">
+                                                Email
+                                            </div>
+                                            <input type="text" maxlength="40" class="pp-blank-button pp-input-field" id="pp-sign-up-username" />
+                                            <hr class="pp-line-space" />
+                                            <div class="pp-input-lable noselect pp-font-custom-helvetica-light">
+                                                Password
+                                            </div>
+                                            <input type="password" maxlength="40" class="pp-blank-button pp-input-field" id="pp-sign-up-password" />
+                                            <hr class="pp-line-space" />
+                                            <div class="pp-input-lable noselect pp-font-custom-helvetica-light">
+                                                Retype password
+                                            </div>
+                                            <input type="password" maxlength="40" class="pp-blank-button pp-input-field" id="pp-sign-up-re-password" />
+                                            <hr class="pp-line-space" />
+                                            <!--<div id="pp-reference-code-input-form">-->
+                                             <div class="pp-input-lable pp-font-custom-helvetica-light">
+                                                Reference code
+                                            </div>
+                                            <input type="text" class="pp-blank-button  pp-input-field" id="pp-sign-up-reference-code" />
+                                            <hr class="pp-line-space" />
+                                            <!--</div>-->
+                                            <button class="pp-button noselect pp-font-custom-helvetica-light" id="pp-sign-up-btn">
+                                                Sign up
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="pp-forgot-password">
+                                    <div class="pp-scene-header noselect pp-font-custom-helvetica-light" id="pp-scene-header-forgot-password">
+                                        RESET PASSWORD
+                                    </div>
+                                    <div class="pp-form-area" id="pp-forgot-password-form">
+                                        <div class="pp-input-area">
+                                            <div class="pp-input-lable noselect pp-font-custom-helvetica-light">
+                                                Email address
+                                            </div>
+                                            <input type="text" maxlength="40" class="pp-blank-button pp-input-field" id="pp-rs-pw-username" />
+                                            <hr class="pp-line-space" />
+                                            <button class="pp-button noselect pp-font-custom-helvetica-light" id="pp-forgot-password-btn">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

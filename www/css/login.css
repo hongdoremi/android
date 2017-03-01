@@ -1,0 +1,510 @@
+#html-holder{
+    margin:0px;
+    text-align:center;
+    height:100%;
+    /*display:none;*/
+}
+#pp-scene-holder{
+    display:block;
+}
+#pp-login-state{
+    display:none;
+}
+#pp-main-login{
+    /*display: none;*/
+}
+#pp-new-sign-up{
+    display: none;
+}
+#pp-forgot-password{
+    display: none;
+}
+#pp-login-back-btn{
+    background: url(../img/login/back.png) no-repeat;
+    background-size: 100%;
+    width:20px;
+    height: 50px;
+    position:fixed;
+    left:3%;
+    top:5%;
+/*    margin-top:35px;*/
+    display:none;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+.pp-scene{
+
+    width:100%;
+    height:100vh;
+    /*    display: inline-block;*/
+    /*    height:100%;*/
+    /*    height:56.26vw;*/
+    /*    height:600px;*/
+    /*    height: 56.25%;*/
+    /*    text-align: center; handles the horizontal centering*/
+}
+.pp-form-area{
+}
+.pp-logo{
+    display: inline-block;
+    vertical-align: middle;
+}
+.pp-center{
+    /*    vertical-align: middle;*/
+
+/*        background:#EEE;*/
+    position:relative;
+    /*    height: 100%;*/
+    display: inline-block;
+    /*    width: 100vw;*/
+    /*    height:56.25;*/
+    height:550px;
+    overflow:visible;
+
+}
+.pp-scene-header{
+    font-size:31px;
+}
+.pp-scene-text-button{
+    font-size:20px;
+    height:50px;
+}
+.pp-input-lable{
+    display: inline-block;
+    font-size:20px;
+    width:160px;
+    text-align:left;
+}
+.pp-input-field{
+    display:inline-block;
+    font-size:20px;
+    width: 400px;
+}
+.pp-line-space{
+    width: 562px;
+    margin-left: 0px;
+}
+.pp-button{
+    border-radius: 8px;
+    background-color: #ffffff;
+    border-width: 1px;
+    border-color :black;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    height:45px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+@font-face {
+    font-family: 'Helvetica-Light';
+    src: url('fonts/Helvetica-Light.otf')
+}
+@font-face {
+    font-family: 'PassionOne-Regular';
+    src: url('fonts/PassionOne-Regular.ttf')
+}
+@font-face {
+    font-family: 'Helvetica-Medium';
+    src: url('fonts/Helvetica-Medium.otf')
+}
+.pp-font-custom-helvetica-light{
+    font-family:Helvetica-Light;
+    color:#323232;
+}
+.pp-font-custom-helvetica-medium{
+    font-family:Helvetica-Medium;
+    color:#323232;
+}
+.pp-gradient-background{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+40,ffffff+40,ffffff+46,ffffff+46,ffffff+47,b7b7b7+100 */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 40%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 47%, rgba(183,183,183,1) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 40%,rgba(255,255,255,1) 40%,rgba(255,255,255,1) 46%,rgba(255,255,255,1) 46%,rgba(255,255,255,1) 47%,rgba(183,183,183,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 40%,rgba(255,255,255,1) 40%,rgba(255,255,255,1) 46%,rgba(255,255,255,1) 46%,rgba(255,255,255,1) 47%,rgba(183,183,183,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b7b7b7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw 100vw;
+    background-position:center;
+
+}
+
+#pp-logo{
+    width:60%;
+    height: auto;
+    margin-top:33px;
+
+}
+#pp-scene-header-login{
+    margin-top:32px;
+}
+#pp-login-form{
+    margin-top:50px;
+}
+#pp-login-btn{
+    margin-top: 20px;
+}
+#pp-new-account-btn{
+    margin-top:19px;
+    height:40px;
+}
+#pp-forgot-pwd-btn{
+    margin-top:1px;
+    height:40px;
+}
+
+#facebook-logo {
+    background:url(../img/login/login_with_fb.png) no-repeat ;
+    background-size:100%;
+    width: 500px;
+    height:100px;
+    margin-top:36px;
+}
+#pp-or-img{
+    width:60%;
+}
+.pp-blank-button{
+    border:none;
+    background: transparent;
+}
+.pp-btn-text{
+    vertical-align: top;
+    font-size:16px;
+    width:130px;
+    height:130px;
+}
+#pp-login-button-row{
+    margin-top:20px;
+}
+#pp-login-as-guest-btn{
+    background:url(../img/login/guess_icon.png) no-repeat;
+    background-size:100%;
+    width:130px;
+    height:130px;
+}
+#pp-login-with-acc-btn{
+    background:url(../img/login/login_with_pp.png) no-repeat;
+    background-size:100%;
+    margin-left:30px;
+    width:130px;
+    height:130px;
+}
+#pp-permision-footer-text{
+    margin-top:40px;
+    font-size:13px;
+}
+#pp-copyright-footer-text{
+    font-size:13px;
+}
+#pp-version{
+    margin-top:50px;
+    left:10%;
+    font-size:20px;
+    position:fixed;
+}
+#pp-main-scene-footer{
+}
+
+#pp-sign-up-btn{
+    margin-top: 20px;
+}
+#pp-scene-header-sign-up{
+    margin-top:40px;
+}
+#pp-sign-up-form{
+    margin-top:40px;
+}
+#pp-forgot-password-form{
+    margin-top:50px;
+}
+#pp-forgot-password-btn{
+    margin-top:15px;
+}
+#pp-scene-header-forgot-password{
+    margin-top:40px;
+}
+
+#pp-popup-notification-login-scene
+{
+    display: none;
+    height: 35%;
+    width: 70%;
+    z-index: 1004;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: white;
+}
+
+#in-game-html-holder{
+    margin:0px;
+    text-align:center;
+    height:100%;
+    z-index: 1004;
+}
+#popup-change-name{
+    background:url(../img/popup/change-name/popup-changename-bg.png);
+    background-size:100% 100%;
+    height:270px;
+    width:470px;
+    position:absolute;
+    top:-135px;
+    left:-235px;
+    display:none;
+
+}
+.pp-center-in-game{
+    position:relative;
+    display: inline-block;
+    z-index:1005;
+}
+.close-popup-btn{
+    border:none;
+    background:url("../img/popup button/btn_close.png");
+    background-size:100% 100%;
+    width:60px;
+    height:60px;
+    margin-left:92%;
+    margin-top:-10px;
+}
+.popup-text{
+    font-family: "PassionOne-Regular";
+    color:#fefefe;
+    font-size:24px;
+    line-height:100%;
+}
+.popup-btn-text{
+    font-family: "PassionOne-Regular";
+    color:#fefefe;
+    font-size:30px;
+}
+#popup-change-name-title{
+    margin-top:-21px;
+}
+#popup-change-name-user-name{
+    margin-top: 16px;
+}
+#popup-change-name-new-name{
+    margin-top:30px;
+  margin-bottom:30px;
+    text-align: center;
+    width:400px;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-left:0px;
+    padding-right:0px;
+}
+.purple-button{
+    border:none;
+    background:url("../img/popup button/btn_purple.png");
+    background-size:100% 100%;
+    height:56px;
+    width:182px;
+}
+.green-button{
+    border:none;
+    background:url("../img/popup button/btn_green.png");
+    background-size:100% 100%;
+    height:56px;
+    width:182px;
+}
+.blue-square-button{
+    border:none;
+    background:url("../img/popup/setting/privacy_policy_background.png");
+    background-size:100% 100%;
+    height:54px;
+    width:210px;
+    position: absolute;
+    display: block;
+}
+.green-square-button{
+    border:none;
+    background:url("../img/popup/setting/term_of_service_background.png");
+    background-size:100% 100%;
+    height:54px;
+    width:195px;
+    position: absolute;
+    display: block;
+}
+#popup-change-name-cancel-btn{
+    margin-right:25px;
+}
+#popup-change-name-ok-btn{
+}
+#popup-notification-css{
+    background:url(../img/popup/notification/congrat_bg_small.png);
+    background-size:100% 100%;
+    height:337px;
+    width:607px;
+    position: absolute;
+    top:-168.5px;
+    left:-303.5px;
+    display:block;
+
+}
+#popup-setting-css{
+    background:url(../img/popup/setting/background-option.png);
+    background-size:100% 100%;
+    height:465px;
+    width:755px;
+    position: absolute;
+    top:-250px;
+    left:-375px;
+    display:none;
+}
+#popup-buyspins-css{
+    background:url(../img/popup/notification/congrat_bg_small.png);
+    background-size:100% 100%;
+    height:337px;
+    width:607px;
+    position: absolute;
+    top:-168.5px;
+    left:-303.5px;
+    display:none;
+}
+.popup-setting-language-btn{
+    border:none;
+    background:url(../img/popup/setting/issue_type.png);
+    background-size:100% 100%;
+    height:32px;
+    width:112px;
+    position: absolute;
+}
+.switch {
+    background:url(../img/popup/setting/btn-off.png);
+}
+
+.switch input {display:none;}
+
+.toggle {
+    background: url(../img/popup/setting/btn-off.png);
+    position: absolute;
+    width: 112px;
+    height: 32px;
+    background-size: 100% 100%;
+}
+input:checked + .toggle {
+    background:url(../img/popup/setting/btn-on.png);
+    background-size: 100% 100%;
+}
+
+#popup-notification-title{
+    margin-top:-27px;
+}
+#popup-notification-body-div{
+    width: 80%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    text-align: center;
+    display: flex;
+}
+#popup-notification-body-span{
+     margin: auto;
+}
+#popup-notification-cancel-btn{
+    display: none;
+    margin-left: 50px;
+}
+#popup-notification-info-icon
+{
+    background:url(../img/popup/info_icon.png);
+    background-size:100% 100%;
+    width: 31px;
+    height: 31px;
+    margin-top: auto;
+}
+#popup-notification-info-text
+{
+    text-align: left;
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: -25px;
+}
+#popup-notification-info
+{
+    position:relative;
+    margin-left: 27px;
+    top: 31px
+}
+#text-ok-popup-notification
+{
+    font-size: 36px;
+}
+#text-cancel-popup-notification
+{
+    font-size: 36px;
+}
+.darkLayerNew
+{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	z-index:1000;
+}
+#darkLayerLoginNew
+{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:1000;
+}
+#popup-notification-button-row
+{
+    position: absolute;
+    top: 63%;
+    width: 100%;
+}
+#popup-notification-info
+{
+    position: absolute;
+    margin-left: 27px;
+    top: 82%;
+}
+
+
+#closeButton:active, #summitButton:active, #cancelButton:active, .scale-button:active, .green-button:active, .purple-button:active, .close-popup-btn:active,
+.blue-square-button:active, .green-square-button:active{
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+button{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
